@@ -1,4 +1,4 @@
- # Hello!  
+# Hello!  
 
 My name is **Mohammad Jamshidi**. I designed this page to share my experiences and projects.  
 
@@ -26,4 +26,4 @@ Thank you for taking your time to visit this page!
 
 
 ## Demo 
-[show profile card](https://mohmd-jam.github.io/personal-page)    
+[show profile card](https://mohmd-jam.github.io/profile)    
