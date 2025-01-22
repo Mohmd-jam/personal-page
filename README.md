@@ -26,4 +26,4 @@ Thank you for taking your time to visit this page!
 
 
 ## Demo 
-[show profile card](https://mohmd-jam.github.io/profile)    
+[show personal-page](https://mohmd-jam.github.io/personal-page)    
