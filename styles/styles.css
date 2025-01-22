@@ -54,10 +54,10 @@ header {
     border: 3px solid var(--accent);
     border-radius: 50%;
     transition: var(--transition);
+}
 
-    &:hover {
-        transform: scale(1.1);
-    }
+.icon img:hover {
+    transform: scale(1.1);
 }
 
 nav {
@@ -80,21 +80,21 @@ nav ul li a {
     border-radius: 4px;
     transition: all 1.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+}
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--accent);
-        transition: width 0.3s ease;
-    }
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
 
-    &:hover::after {
-        width: 100%;
-    }
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
@@ -102,7 +102,6 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Main Sections */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -113,7 +112,6 @@ section {
     margin: 4rem 0;
 }
 
-/* Hero Section */
 #hero {
     text-align: center;
     padding: 4rem 0;
@@ -130,7 +128,6 @@ section {
     color: var(--accent);
 }
 
-/* About Section */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -199,8 +196,6 @@ section {
     margin-bottom: 1rem;
 }
 
-
-/* Skills Section */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -227,7 +222,6 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Projects Section */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -281,7 +275,6 @@ section {
     transform: translateY(-2px);
 }
 
-/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 2rem auto;
@@ -337,7 +330,23 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
+#formStatus {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+#formStatus.success {
+    background: rgba(46, 204, 113, 0.2);
+    color: #27ae60;
+}
+
+#formStatus.error {
+    background: rgba(231, 76, 60, 0.2);
+    color: #c0392b;
+}
+
 footer {
     background: var(--gradient);
     color: var(--light);
@@ -397,23 +406,43 @@ footer {
     filter: brightness(0) invert(80%) sepia(50%) saturate(500%) hue-rotate(180deg);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+#user-ip {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--light);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+    margin: 0.8rem auto;
+    max-width: 800px;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    opacity: 0.9;
+    max-width: 220px;
+}
 
-    /* Navigation */
+#user-ip:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    /* Header */
     .icon img {
         width: 4.5rem;
         height: 4.5rem;
     }
 
-    /* Content */
     .about-content,
     .bio-content {
         grid-template-columns: 1fr;
@@ -426,13 +455,11 @@ footer {
         margin: 0 auto;
     }
 
-    /* Forms */
     .contact-form {
         margin: 1rem;
         padding: 1.5rem;
     }
 
-    /* Social */
     .social-links {
         gap: 1.5rem;
     }
@@ -444,8 +471,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-
-    /* Layout */
     #AllStage {
         padding: 1rem;
     }
@@ -454,12 +479,10 @@ footer {
         margin: 2rem 0;
     }
 
-    /* Grid */
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Social */
     .social-links {
         gap: 1rem;
     }
@@ -474,7 +497,6 @@ footer {
         height: 20px;
     }
 
-    /* Typography */
     .copyright {
         font-size: 0.85rem;
     }

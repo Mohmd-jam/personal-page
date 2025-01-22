@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="shortcut icon" href="image/pageicon.png" type="image/x-icon">
-    <script src="script/script.js" defer></script>
+
 </head>
 
 <body>
@@ -53,6 +53,10 @@
                         <h3>HTML</h3>
                     </div>
                     <div class="skill-card">
+                        <img src="image/php.svg" alt="Php">
+                        <h3>Php</h3>
+                    </div>
+                    <div class="skill-card">
                         <img src="image/css.svg" alt="CSS3">
                         <h3>CSS</h3>
                     </div>
@@ -68,11 +72,20 @@
                 <div class="project-grid">
                     <article class="project-card">
                         <img src="image/pageicon.png" alt="Project 1">
-                        <h3>Project Title</h3>
+                        <h3>Personal Page</h3>
                         <p>Project description goes here</p>
                         <div class="project-links">
                             <a href="#" class="btn">Demo</a>
                             <a href="#" class="btn">Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="image/01.png" alt="Project 1" style="border-radius: 50px;">
+                        <h3>Profile Card</h3>
+                        <p>Project description goes here</p>
+                        <div class="project-links">
+                            <a href="https://mohmd-jam.github.io/profile" class="btn">Demo</a>
+                            <a href="https://github.com/Mohmd-jam/profile" class="btn">Code</a>
                         </div>
                     </article>
                 </div>
@@ -80,17 +93,29 @@
 
             <section id="contact">
                 <h2>Contact Me</h2>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
                     <button type="submit" class="btn">Send Message</button>
+                    <div id="formStatus"></div>
                 </form>
             </section>
         </main>
 
         <footer>
-            <p class="copyright">Your IP:</p>
+            <p id="user-ip">Your IP: Loading...</p>
+            <script>
+                fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('user-ip').innerText = 'Your IP: ' + data.ip;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching IP:', error);
+                        document.getElementById('user-ip').innerText = 'Your IP: Unable to retrieve';
+                    });
+            </script>
             <p class="copyright">Copyright © 2025 Mohmd.jam</p>
             <p class="copyright">All Rights Reserved</p>
             <p class="copyright">You bloom in the sun while I enjoy myself under the gloomy sky</p>
@@ -113,5 +138,6 @@
         </footer>
     </div>
 </body>
+
 
 </html>
